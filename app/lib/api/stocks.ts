@@ -25,9 +25,9 @@ export async function fetchStocks({
 
     if (!response.ok) {
       if (response.status === 401) {
-        throw new Error("Unauthorized: Invalid API keyo");
+        throw new Error("Unauthorized: Invalid API key");
       } else if (response.status === 429) {
-        throw new Error("Rate limit exceededo");
+        throw new Error("Rate limit exceeded");
       } else {
         throw new Error(`API error: ${response.status}`);
       }
