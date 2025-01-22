@@ -3,17 +3,18 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { SplashScreenProps } from "@/app/lib/types/ui";
 
-export function SplashScreen() {
+export function SplashScreen({ redirectTo, delay = 2000 }: SplashScreenProps) {
   const router = useRouter();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push("/explore");
-    }, 2000);
+      router.push(redirectTo);
+    }, delay);
 
     return () => clearTimeout(timer);
-  }, [router]);
+  }, [router, redirectTo, delay]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-black text-white">

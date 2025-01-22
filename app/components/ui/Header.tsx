@@ -19,7 +19,7 @@ export default function Header({ onSearch }: HeaderProps) {
           </Link>
         </div>
         <div className="w-full max-w-3xl">
-          <SearchBar onSearch={onSearch} />
+          <SearchBar onSearch={onSearch} placeholder="Search stocks..." />
         </div>
       </div>
 
@@ -37,7 +37,7 @@ export default function Header({ onSearch }: HeaderProps) {
         </div>
         <div className="flex justify-center">
           <div className="w-full max-w-3xl">
-            <SearchBar onSearch={onSearch} />
+            <SearchBar onSearch={onSearch} placeholder="Search stocks..." />
           </div>
         </div>
         <div />

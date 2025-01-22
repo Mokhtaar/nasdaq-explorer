@@ -6,7 +6,7 @@ import StockCard from "./StockCard";
 import { useStocks } from "../../hooks/stocks/use-stocks";
 import LoadingSpinner from "../ui/LoadingSpinner";
 import Header from "../ui/Header";
-import NoStocksFound from "../ui/NoStocksFound";
+import NoStocksFound from "./NoStocksFound";
 import { StockGridSkeleton } from "../ui/StockGridSkeleton";
 
 export default function StockGrid() {
