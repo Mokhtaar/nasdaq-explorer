@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { ErrorBoundary } from "react-error-boundary";
-import { FallbackProps } from "react-error-boundary";
+import { useCallback, useEffect, useState } from "react";
+import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
+import { TrendingUp } from "lucide-react";
+import Progress from "../ui/Progress";
+import Button from "../ui/Button";
 
 function ClientErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
-  const [countdown, setCountdown] = useState(10);
+  const [countdown, setCountdown] = useState(5);
+  const progress = Math.max(0, Math.min(100, ((5 - countdown) / 4) * 100));
   const isRateLimitError = error.message.toLowerCase().includes("rate limit");
 
   useEffect(() => {
@@ -21,22 +24,23 @@ function ClientErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [resetErrorBoundary, isRateLimitError]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-2xl font-bold mb-4">Error loading stocks</h2>
-      <p className="text-red-500 mb-4">{error.message}</p>
-      {isRateLimitError ? (
-        <p className="mb-4">Retrying in {countdown} seconds...</p>
-      ) : (
-        <button
-          onClick={resetErrorBoundary}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-        >
-          Try again
-        </button>
-      )}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-gray-100">
+      <div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h2 className="text-3xl font-bold mb-6 text-center">
+          Error loading stocks
+        </h2>
+        <p className="text-red-400 mb-6 text-center">{error.message}</p>
+        {isRateLimitError ? (
+          <Progress countdown={countdown} progress={progress} />
+        ) : (
+          <Button
+            text="Try again"
+            icon={<TrendingUp size={18} />}
+          />
+        )}
+      </div>
     </div>
   );
 }
