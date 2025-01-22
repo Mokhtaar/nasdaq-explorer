@@ -10,7 +10,7 @@ export default function SearchBar({ onSearch, placeholder }: SearchBarProps) {
     setSearchTerm(e.target.value);
   }, []);
 
-  useDebounce(searchTerm, 800, onSearch);
+  useDebounce(searchTerm, 600, onSearch);
 
   return (
     <div
