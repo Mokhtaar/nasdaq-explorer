@@ -1,7 +1,7 @@
 import { StockApiResponse, StocksQueryParams } from "../types/api";
 
 const POLYGON_API_BASE = "https://api.polygon.io/v3";
-const DEFAULT_API_LIMIT = 50;
+const DEFAULT_API_LIMIT = 48;
 
 export async function fetchStocks({
   search,
