@@ -7,12 +7,12 @@ export default function Header({ onSearch }: HeaderProps) {
   return (
     <header className="border-b border-gray-800 w-full">
       {/* Mobile layout */}
-      <div className="flex flex-col gap-4 p-4 md:hidden">
+      <div className="flex flex-col gap-4 mt-4 md:hidden">
         <div className="flex justify-center">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Image
-              width={100}
-              height={100}
+              width={116}
+              height={33}
               src="/NASDAQ_Logo.svg"
               alt="Nasdaq"
             />
@@ -24,12 +24,12 @@ export default function Header({ onSearch }: HeaderProps) {
       </div>
 
       {/* Desktop layout */}
-      <div className="hidden md:grid md:grid-cols-3 items-center px-6 py-3 gap-4">
+      <div className="hidden md:grid md:grid-cols-3 items-center px-6 gap-4">
         <div className="flex justify-start">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Image
-              width={120}
-              height={120}
+              width={116}
+              height={33}
               src="/NASDAQ_Logo.svg"
               alt="Nasdaq"
             />
