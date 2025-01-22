@@ -26,7 +26,7 @@ export default function StockGrid() {
   }, [inView, hasNextPage, fetchNextPage]);
 
   return (
-    <section className="min-h-screen bg-gray-900">
+    <section className="min-h-screen bg-gray-900 sm:p-4">
       <Header onSearch={setSearch} />
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-4">
         {stocks.length > 0
