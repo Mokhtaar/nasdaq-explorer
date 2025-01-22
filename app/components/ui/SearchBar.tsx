@@ -16,7 +16,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
     <div
       role="search"
       aria-label="Stock search"
-      className="sticky top-0 bg-gray-900 p-4 z-10"
+      className="sticky bg-gray-900"
     >
       <label htmlFor="stock-search" className="sr-only">
         Search stocks
@@ -27,7 +27,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
         placeholder="Search stocks..."
         value={searchTerm}
         onChange={handleChange}
-        className="w-full max-w-2xl mx-auto block px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-blue-500"
+        className="w-full mx-auto block px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-blue-500"
       />
     </div>
   );

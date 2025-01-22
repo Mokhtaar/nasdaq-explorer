@@ -1,6 +1,6 @@
 export function StockGridSkeleton() {
   return (
-    <div className="col-span-full grid grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+    <div className="col-span-full grid grid-cols-2 lg:grid-cols-4 gap-4 p-2">
       {[...Array(12)].map((_, index) => (
         <div
           key={index}

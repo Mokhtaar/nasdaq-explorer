@@ -18,9 +18,7 @@ export default function Header({ onSearch }: HeaderProps) {
             />
           </Link>
         </div>
-        <div className="w-full max-w-3xl">
-          <SearchBar onSearch={onSearch} />
-        </div>
+        <SearchBar onSearch={onSearch} />
       </div>
 
       {/* Desktop layout */}
@@ -35,11 +33,7 @@ export default function Header({ onSearch }: HeaderProps) {
             />
           </Link>
         </div>
-        <div className="flex justify-center">
-          <div className="w-full max-w-3xl">
-            <SearchBar onSearch={onSearch} />
-          </div>
-        </div>
+        <SearchBar onSearch={onSearch} />
         <div />
       </div>
     </header>
