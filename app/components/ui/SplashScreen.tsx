@@ -17,17 +17,18 @@ export function SplashScreen({ redirectTo, delay = 2000 }: SplashScreenProps) {
   }, [router, redirectTo, delay]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-black text-white">
-      <div className="flex-grow flex items-center justify-center">
+    <div className="flex items-center justify-center h-screen bg-black text-white">
+      <div className="flex flex-col items-center space-y-40">
         <Image
           src="/NASDAQ_Logo Only.svg"
           alt="Nasdaq Logo"
-          width={200}
+          width={100}
           height={100}
-          className="animate-pulse"
+          priority
+          className="animate-pulse aspect-auto w-44 h-44 sm:w-full sm:h-full"
         />
+        <div className="p-4 text-sm sm:text-lg">Developed by Mokhtar</div>
       </div>
-      <div className="p-4 text-sm">Developed by Mokhtar</div>
     </div>
   );
 }
